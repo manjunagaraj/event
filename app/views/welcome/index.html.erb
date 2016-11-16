@@ -1,0 +1,151 @@
+
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Case</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style type="text/css">
+  .h1, .h2, .h3, h1, h2, h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 230px;
+}
+
+
+p {
+    margin: 0 0 10px;
+    margin-left: 237px;
+}
+</style>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+     <a href=""><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTOxzEC3lqba-AvR0MHCwUzRUPlOr47FBFbN6rfcIedlIJogttA9A" style="width:50px;height:50px;align:right;"></a>
+    </div>
+    
+      <ul class="nav navbar-nav navbar-right">
+        <li><button type="button" class="btn btn-success btn-md btn-space" data-toggle="modal" data-target="#myModal">signup</button>Sign Up</a></li>
+        <li><button type="button" class="btn btn-success btn-md btn-space1" data-toggle="modal" data-target="#myModal1">login</button> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+   <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Sign Up</h4>
+      </div>
+      <div class="modal-body container">
+        <%=form_for :user,:html => {:id => "signupform"},url: user_create_path do |f|%>
+          <%=f.label :fname%><br>
+          <%=f.text_field :fname%><br>
+          <%=f.label :lname%><br>
+          <%=f.text_field :lname%><br>
+          <%=f.label :uname%><br>
+          <%=f.text_field :uname%><br>
+          <%=f.label :Email%><br>
+          <%=f.text_field :email%><br>
+         
+          <%=f.label :password%><br>
+          <%=f.password_field :password%><br>
+          <%=f.label :confirm_password%><br>
+          <%=f.password_field :confirm_password%><br><br>
+          <%=f.submit :ok%>
+          <%= f.submit "cancel", :type => "reset" %><br>
+        <%end%>  
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<div id="myModal1" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Log in</h4>
+      </div>
+      <div class="modal-body container">
+        <%=form_tag '/login',:html => {:id => "loginform"},url: user_session_path do %>
+          
+          <%=label_tag :Email_id%><br>
+          <%=text_field_tag :email%><br>
+          
+          <%=label_tag :password%><br>
+          <%=password_field_tag :password%><br><br>
+          
+          <%=submit_tag :ok%>
+          <%=submit_tag "cancel", :type => "reset" %><br>
+        <%end%>  
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  </body>
+  </html>
+
+
+
+ 
+
+
+  
+
+
+
+   <div class="jumbotron">
+    <h1>Plan an Event</h1>
+    <p class="lead">Project by Manju.This is a simple app to organize your event planning.
+       </p>
+    <p><a class="btn btn-lg btn-success" href="#myModal">welcome</a></p>
+  </div>
+
+
+    <div class="footer">
+    <p> @all  rights reserved</p>
+     
+    </div>
+  </div> 
+</body>
+</html>
+
+

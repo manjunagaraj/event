@@ -1,0 +1,135 @@
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style type="text/css">
+  body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: gainsboro;
+}
+</style>
+
+<div>
+      <div class="container-fluid">
+        
+        <nav class="navbar navbar-inverse">
+        <a href=""><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTOxzEC3lqba-AvR0MHCwUzRUPlOr47FBFbN6rfcIedlIJogttA9A" style="width:50px;height:50px;align:right;"></a>
+          <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to 'home',user_session_path%>
+            <li><%= link_to 'sign out',user_session_path%>
+            </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+
+
+
+
+  
+
+
+    
+
+     
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class = "col-sm-4">
+ </div>
+
+  <div class = "col-sm-6">
+    <div class="container">
+   
+
+
+
+<%= form_for :event do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label :venue %><br>
+    <%= f.text_field :venue %>
+  </p>
+
+
+
+
+<div class = "col-sm-3">
+
+  <p>
+    <%= f.label :date %><br>
+    <%= f.text_field :date %>
+  </p>
+  </div>
+
+<div class = "col-sm-3">
+
+  <p>
+    <%= f.label :time %><br>
+    <%= f.text_field :time %></br>
+  </p>
+  </div>
+
+ 
+  </div>
+  
+
+
+
+
+   <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+ <p>
+    <%= f.label :invitees %><br>
+    <%= f.text_area :invitees %>
+  </p>
+
+
+   <p>
+    <%= f.label :status %><br>
+    <%= f.text_field :status %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+
+
+
+
+
+
+
+
+  
+ </div>
+     </div>

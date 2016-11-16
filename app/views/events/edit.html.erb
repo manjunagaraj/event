@@ -1,0 +1,47 @@
+<div>
+      <div class="container-fluid">
+        
+        <nav class="navbar navbar-inverse">
+        <a href=""><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTOxzEC3lqba-AvR0MHCwUzRUPlOr47FBFbN6rfcIedlIJogttA9A" style="width:50px;height:50px;align:right;"></a>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to 'sign out',user_session_path%>
+            </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+
+<h1>Editing event</h1>
+ 
+<%= form_for :event, url: event_edit_path(@event), method: :put do |f| %>
+ 
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :venue%><br>
+    <%= f.text_area :venue %>
+  </p>
+  <p>
+    <%= f.label :date %><br>
+    <%= f.text_area :date %>
+  </p>
+
+
+  <p>
+    <%= f.label :time %><br>
+    <%= f.text_area :time %>
+  </p>
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
+ 

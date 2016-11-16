@@ -1,0 +1,90 @@
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style type="text/css">
+  body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: gainsboro;
+}
+</style>
+
+<div>
+      <div class="container-fluid">
+        
+        <nav class="navbar navbar-inverse">
+        <a href=""><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTOxzEC3lqba-AvR0MHCwUzRUPlOr47FBFbN6rfcIedlIJogttA9A" style="width:50px;height:50px;align:right;"></a>
+        
+          <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to 'home',user_session_path%>
+            <li><%= link_to 'sign out',user_session_path%>
+            </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+
+
+
+
+
+    <div class="container">
+<div class="row">
+<div class="col-md-6">
+<div>
+<h1> List of all events</h1>
+
+     
+  <% @eventts.each do |e| %>
+<div class="well">
+  <strong>Title : </strong><%= link_to e.title, '#' %><br>
+  <strong>Venue :</strong><%= link_to e.venue,'#' %></br>
+  <strong>Description :</strong><%=  link_to e.description,'#'%>
+<br><a href="#" data-toggle="modal" data-target="#myModal-<%= e.id%>">Participents</a><br><br>
+
+<%= link_to 'Edit Event ',  event_edit_path(e) %>
+<%= link_to 'Delete Event ', event_destroy_path(e)  %>
+
+
+
+
+
+<!-- these lines of codes are cetainly use or not,if u don't want delete
+ -->  
+<!-- <div class="status"> -->
+
+
+<div class="container"><!-- Modal -->
+<div class="modal fade" id="myModal-<%= e.id%>" role="dialog">
+ <div class="modal-dialog">
+ 
+   <!-- Modal content-->
+   <div class="modal-content">
+     <div class="modal-header">
+       <button type="button" class="close" data-dismiss="modal">&times;</button>
+       <h4 class="modal-title">Event : <%= e.title  %> </h4>
+     </div>
+     <div class="modal-body">
+   
+       
+     </div>
+     <div class="modal-footer">
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+     </div>
+   </div>
+   
+ </div>
+</div></div></div>
+          <% end %>
+</div>
+</div>
