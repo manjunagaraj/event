@@ -3,12 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-
-get 'invitation/new'=>'invitations#new',as: :invitation_new
-post 'invitation/new'=>'invitations#create',as: :invitation_create
-
- get "/event/:id"=>"events#destroy",as: :event_destroy
- root 'welcome#index',as: :home
+   root 'welcome#index',as: :home
   get '/signup' => 'welcome#index',as: :user_new
   post 'users' => 'users#create',as: :user_create
 
@@ -31,8 +26,11 @@ get "/event/:id/edit"=>"events#edit", as: :event_edit
   put "event/:id/edit"=>"events#update",as: :event_update
 
 
- 
+  get "/event/:id"=>"events#destroy",as: :event_destroy
 
+
+get 'invitation/new'=>'invitations#new',as: :invitation_new
+post 'invitation/new'=>'invitations#create',as: :invitation_create
 
 
 
