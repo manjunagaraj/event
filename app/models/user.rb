@@ -1,4 +1,4 @@
 class User < ActiveRecord::Base
-	has_many :invitations
-	has_many :events,through: :invitations
+	
+	has_many :events,foreign_key: :owner_id
 end

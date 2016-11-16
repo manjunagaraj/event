@@ -21,7 +21,11 @@
       <div class="container-fluid">
         
         <nav class="navbar navbar-inverse">
+
+        
         <a href=""><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTOxzEC3lqba-AvR0MHCwUzRUPlOr47FBFbN6rfcIedlIJogttA9A" style="width:50px;height:50px;align:right;"></a>
+
+
           <ul class="nav navbar-nav navbar-right">
           <li><%= link_to 'home',user_session_path%>
             <li><%= link_to 'sign out',user_session_path%>
@@ -106,11 +110,7 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </p>
- <p>
-    <%= f.label :invitees %><br>
-    <%= f.text_area :invitees %>
-  </p>
-
+ 
 
    <p>
     <%= f.label :status %><br>

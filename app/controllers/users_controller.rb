@@ -9,8 +9,7 @@ class UsersController < ApplicationController
 		@user = User.new(params_user)
 		if @user.save
 			session[:user_id] = @user.id
-			#binding.pry
-			# @user = User.find_by_id(params[:user_id])
+		
       		redirect_to home_path
 		else
 			redirect_to user_new_path
