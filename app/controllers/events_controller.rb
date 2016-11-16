@@ -26,15 +26,16 @@ end
 	def edit
 
 	@event=Eventt.find_by_id(params[:id])
-	
-end
+	#redirect_to events_list_path
+
+	end
+
 
 	def update
 	#binding.pry
 	@event=Eventt.find_by_id(params[:id])
 	@event.update_attributes(params_event)
-	redirect_to eventt_new_path
-
+	redirect_to events_list_path
 
 end
 
@@ -42,9 +43,7 @@ end
 
 def destroy
 	@event=Eventt.find_by_id(params[:id])
-	
 	@event.destroy
-
 	redirect_to events_list_path
 	end
 
@@ -56,9 +55,11 @@ def destroy
 	
 
 	
+end
+
 
 	
-end
+
 
     
 
